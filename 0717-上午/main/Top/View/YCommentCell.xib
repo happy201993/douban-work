@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="111" id="FsB-ng-pZb" customClass="YCommentCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FsB-ng-pZb" id="fUv-5B-g6n">
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XOC-S7-R5M">
+                        <rect key="frame" x="5" y="5" width="50" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="APC-qn-oyy"/>
+                            <constraint firstAttribute="height" constant="50" id="r0F-U0-zap"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="yangna988" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ObC-o0-blB" userLabel="name">
+                        <rect key="frame" x="65" y="5" width="150" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="150" id="MMv-RJ-l8j"/>
+                            <constraint firstAttribute="height" constant="21" id="zxh-fT-4vD"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="艹。。。。摩冰这么好看还是被赛尔洛克踩在脚下。。。这什么世道。。。摩海希望能更加华丽。。。当然，我对于画面没有什么话语权。。但还是可以评评歌曲的。。。这次的歌是什么鬼啊。。。听了我都眼瞎耳聋了。。。" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bI6-uL-CjY" userLabel="comment">
+                        <rect key="frame" x="65" y="31" width="245" height="72"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9.0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6WH-QE-X6T">
+                        <rect key="frame" x="280" y="5" width="30" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="30" id="J3S-p0-HiB"/>
+                            <constraint firstAttribute="height" constant="21" id="JDn-br-cJu"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="XOC-S7-R5M" firstAttribute="leading" secondItem="fUv-5B-g6n" secondAttribute="leading" constant="5" id="4Bf-cS-nCz"/>
+                    <constraint firstItem="XOC-S7-R5M" firstAttribute="trailing" secondItem="ObC-o0-blB" secondAttribute="leading" constant="-10" id="AUQ-5V-cE5"/>
+                    <constraint firstAttribute="trailing" secondItem="bI6-uL-CjY" secondAttribute="trailing" constant="10" id="D2Y-ZR-Shg"/>
+                    <constraint firstItem="bI6-uL-CjY" firstAttribute="leading" secondItem="ObC-o0-blB" secondAttribute="leading" id="GVM-Dw-56p"/>
+                    <constraint firstItem="XOC-S7-R5M" firstAttribute="top" secondItem="fUv-5B-g6n" secondAttribute="top" constant="5" id="Izh-Pr-8V1"/>
+                    <constraint firstItem="XOC-S7-R5M" firstAttribute="top" secondItem="ObC-o0-blB" secondAttribute="top" id="Xf7-lo-5qy"/>
+                    <constraint firstItem="bI6-uL-CjY" firstAttribute="top" secondItem="ObC-o0-blB" secondAttribute="bottom" constant="5" id="YSu-5e-XEF"/>
+                    <constraint firstAttribute="trailing" secondItem="6WH-QE-X6T" secondAttribute="trailing" constant="10" id="bnt-vb-zqN"/>
+                    <constraint firstItem="ObC-o0-blB" firstAttribute="top" secondItem="6WH-QE-X6T" secondAttribute="top" id="x45-0w-WVL"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="content" destination="bI6-uL-CjY" id="Jp6-1o-UX9"/>
+                <outlet property="nickname" destination="ObC-o0-blB" id="ViZ-jc-f4n"/>
+                <outlet property="rating" destination="6WH-QE-X6T" id="Mur-zK-6kg"/>
+                <outlet property="userImage" destination="XOC-S7-R5M" id="XjZ-Es-LTS"/>
+            </connections>
+            <point key="canvasLocation" x="371" y="268.5"/>
+        </tableViewCell>
+    </objects>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
