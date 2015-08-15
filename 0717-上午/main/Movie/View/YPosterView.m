@@ -225,7 +225,14 @@ static NSInteger const largeCollectionViewTag = 10010;
 -(void)setMoveList:(NSArray *)moveList
 {
     _moveList = moveList;
-    self.bottomView.text = [moveList[0] title];
+    if (moveList.count != 0) {
+        
+        self.bottomView.text = [moveList[0] title];
+        UICollectionView *small = (UICollectionView *)[self.headerView viewWithTag:smallCollectionViewTag];
+        [small reloadData];
+        [self.collectionView reloadData];
+    }
+    
 }
 
 #pragma mark - 数据源方法

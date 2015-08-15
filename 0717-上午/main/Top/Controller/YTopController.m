@@ -76,29 +76,39 @@ static NSString *const ID = @"topcell";
 
 - (NSArray *)loadData
 {
-    NSDictionary * dict = [DataService getDataFromJsonFile:@"top250.json"];
-//       NSLog(@"%@",dict);
-    self.title = dict[@"title"];
-    NSArray *array = dict[@"subjects"];
-    NSMutableArray *movieList = [NSMutableArray array];
-    NSInteger i = 0;
-    for (NSDictionary *movieInfo in array) {
-        i++;
-        NSString *objectId = movieInfo[@"id"];
-        NSString *movieTitle = movieInfo[@"title"];
-        NSString *year = movieInfo[@"year"];
-        NSDictionary *rating = movieInfo[@"rating"];
-        NSNumber *average = rating[@"average"];
-        NSDictionary *images = movieInfo[@"images"];
-        NSDictionary *movie = @{@"objectId":objectId,
-                                @"title":movieTitle,
-                                @"year":year,
-                                @"average":average,
-                                @"images":images
-                                };
-        YMovie *mMovie = [YMovie moveWithDictionary:movie];
-        [movieList addObject:mMovie];
-    }
+    
+     NSMutableArray *movieList = [NSMutableArray array];
+    YHttpRequest *request = [[YHttpRequest alloc] init];
+    [request getDataWithRelativePath:DBTop250 WithParams:nil withBlock:^(id data, NSError *error) {
+        
+        if (data != nil) {
+            NSDictionary * dict = data;
+            self.title = dict[@"title"];
+            NSArray *array = dict[@"subjects"];
+            NSInteger i = 0;
+            for (NSDictionary *movieInfo in array) {
+                i++;
+                NSString *objectId = movieInfo[@"id"];
+                NSString *movieTitle = movieInfo[@"title"];
+                NSString *year = movieInfo[@"year"];
+                NSDictionary *rating = movieInfo[@"rating"];
+                NSNumber *average = rating[@"average"];
+                NSDictionary *images = movieInfo[@"images"];
+                NSDictionary *movie = @{@"objectId":objectId,
+                                        @"title":movieTitle,
+                                        @"year":year,
+                                        @"average":average,
+                                        @"images":images
+                                        };
+                YMovie *mMovie = [YMovie moveWithDictionary:movie];
+                [movieList addObject:mMovie];
+            }
+            _movieList = movieList;
+            [self.collectionView reloadData];
+            
+        }
+    }];
+   
     return movieList;
 
 }

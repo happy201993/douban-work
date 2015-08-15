@@ -33,22 +33,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "0717-&#x4e0a;&#x5348;/main/Movie/Controller/YMovieController.m"
-            timestampString = "459157555.196337"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "155"
-            endingLineNumber = "155"
-            landmarkName = "-loadData"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "0717-&#x4e0a;&#x5348;/main/More/Controller/YMoreController.m"
             timestampString = "459672578.65932"
             startingColumnNumber = "9223372036854775807"

@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "YHttpRequest.h"
+#import "YConstants.h"
 #define YTopBarH 64
 #define YBottomBarH 49
 #define YMargin 10

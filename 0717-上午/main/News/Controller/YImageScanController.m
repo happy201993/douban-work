@@ -7,14 +7,14 @@
 //
 
 #import "YImageScanController.h"
-#import "YImageScanView.h"
+
 #import "YImageScanCell.h"
 #import "YImageScrollView.h"
 #define YScreenWidth [UIScreen mainScreen].bounds.size.width
 #define YScreenHeight [UIScreen mainScreen].bounds.size.height
 
 static NSString *const reuseIdentifier = @"dslkfj";
-@interface YImageScanController ()<YImageScanViewDelegate,UICollectionViewDelegate,UICollectionViewDataSource>
+@interface YImageScanController ()<UICollectionViewDelegate,UICollectionViewDataSource>
 @property (nonatomic,strong) UICollectionView *collectionView;
 @end
 
@@ -115,10 +115,7 @@ static NSString *const reuseIdentifier = @"dslkfj";
     return cell;
 }
 
-- (void)imageScanView:(YImageScanView *)imageScanView currentIndex:(NSInteger)index
-{
-    self.title = [NSString stringWithFormat:@"%li/%li",index+1,self.imageList.count];
-}
+
 
 - (void)collectionView:(UICollectionView *)collectionView didEndDisplayingCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath
 {

@@ -25,7 +25,7 @@
     
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     BOOL Launched = [userDefaults boolForKey:@"Launched"];
-    Launched = NO;
+    //Launched = NO;
     if (!Launched) {
         [userDefaults setBool:YES forKey:@"Launched"];
         YFirstViewController *vc = [[YFirstViewController alloc] init];

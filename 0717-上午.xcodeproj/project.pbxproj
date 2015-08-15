@@ -78,6 +78,7 @@
 		C6DDD25F1B5F8CA000048885 /* YCinemaCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6DDD25E1B5F8CA000048885 /* YCinemaCell.xib */; };
 		C6E1732F1B666F4700C4AD80 /* YFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6E1732D1B666F4700C4AD80 /* YFirstViewController.m */; };
 		C6E173301B666F4700C4AD80 /* YFirstViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6E1732E1B666F4700C4AD80 /* YFirstViewController.xib */; };
+		C6F5405F1B7F1D27008B349F /* YHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C6F5405E1B7F1D27008B349F /* YHttpRequest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -208,6 +209,9 @@
 		C6E1732C1B666F4700C4AD80 /* YFirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFirstViewController.h; sourceTree = "<group>"; };
 		C6E1732D1B666F4700C4AD80 /* YFirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YFirstViewController.m; sourceTree = "<group>"; };
 		C6E1732E1B666F4700C4AD80 /* YFirstViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YFirstViewController.xib; sourceTree = "<group>"; };
+		C6F5405C1B7F1D27008B349F /* YConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YConstants.h; sourceTree = "<group>"; };
+		C6F5405D1B7F1D27008B349F /* YHttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHttpRequest.h; sourceTree = "<group>"; };
+		C6F5405E1B7F1D27008B349F /* YHttpRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHttpRequest.m; sourceTree = "<group>"; };
 		C8D132AC1A06FF7620957611 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		E65D6A25B72083C5370B6627 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -600,6 +604,9 @@
 		C666F1D91B589B8500E600A4 /* other */ = {
 			isa = PBXGroup;
 			children = (
+				C6F5405C1B7F1D27008B349F /* YConstants.h */,
+				C6F5405D1B7F1D27008B349F /* YHttpRequest.h */,
+				C6F5405E1B7F1D27008B349F /* YHttpRequest.m */,
 				C666F1A21B589ADD00E600A4 /* AppDelegate.h */,
 				C666F1A31B589ADD00E600A4 /* AppDelegate.m */,
 			);
@@ -815,6 +822,7 @@
 				C68846451B62186900407A84 /* YPosterView.m in Sources */,
 				C651F4C31B66211D00CEFC70 /* YCommentCell.m in Sources */,
 				C6DDD23A1B5F2C9F00048885 /* YNewsDetail.m in Sources */,
+				C6F5405F1B7F1D27008B349F /* YHttpRequest.m in Sources */,
 				C666F1A41B589ADD00E600A4 /* AppDelegate.m in Sources */,
 				C666F22F1B58F12E00E600A4 /* BaseViewController.m in Sources */,
 				C6E1732F1B666F4700C4AD80 /* YFirstViewController.m in Sources */,

@@ -11,6 +11,7 @@
 #import "YMovieListCell.h"
 #import "DataService.h"
 #import "YPosterView.h"
+
 @interface YMovieController () <UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic,strong) UITableView *tableView;
@@ -140,39 +141,52 @@
 {
     self.posterView = [[YPosterView alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:self.posterView];
-    self.posterView.moveList = self.movieList;
+//    self.posterView.moveList = self.movieList;
 //    self.posterView.backgroundColor = [UIColor greenColor];
 }
 
 #pragma mark - 加载数据
 - (NSArray *)loadData
 {
-    
-    
-    NSDictionary * dict = [DataService getDataFromJsonFile:@"us_box.json"];
- //   NSLog(@"%@",dict);
-    self.title = dict[@"title"];
-    NSArray *array = dict[@"subjects"];
+    YHttpRequest *request = [[YHttpRequest alloc] init];
     NSMutableArray *movieList = [NSMutableArray array];
-    NSInteger i = 0;
-    for (NSDictionary *movieInfo in array) {
-        i++;
-        NSDictionary *subject = movieInfo[@"subject"];
-        NSString *objectId = subject[@"id"];
-        NSString *movieTitle = subject[@"title"];
-        NSString *year = subject[@"year"];
-        NSDictionary *rating = subject[@"rating"];
-        NSNumber *average = rating[@"average"];
-        NSDictionary *images = subject[@"images"];
-        NSDictionary *movie = @{@"objectId":objectId,
-                                @"title":movieTitle,
-                                @"year":year,
-                                @"average":average,
-                                @"images":images
-                                };
-        YMovie *mMovie = [YMovie moveWithDictionary:movie];
-        [movieList addObject:mMovie];
-    }
+    [request getDataWithRelativePath:DBUSBox WithParams:nil withBlock:^(id data, NSError *error) {
+        if (data != nil) {
+            NSDictionary * dict = data;
+            //   NSLog(@"%@",dict);
+            self.title = dict[@"title"];
+            NSArray *array = dict[@"subjects"];
+            
+            NSInteger i = 0;
+            for (NSDictionary *movieInfo in array) {
+                i++;
+                NSDictionary *subject = movieInfo[@"subject"];
+                NSString *objectId = subject[@"id"];
+                NSString *movieTitle = subject[@"title"];
+                NSString *year = subject[@"year"];
+                NSDictionary *rating = subject[@"rating"];
+                NSNumber *average = rating[@"average"];
+                NSDictionary *images = subject[@"images"];
+                NSDictionary *movie = @{@"objectId":objectId,
+                                        @"title":movieTitle,
+                                        @"year":year,
+                                        @"average":average,
+                                        @"images":images
+                                        };
+                YMovie *mMovie = [YMovie moveWithDictionary:movie];
+                [movieList addObject:mMovie];
+            }
+            _movieList = movieList;
+            //刷新表格
+            self.posterView.moveList = self.movieList;
+            [self.tableView reloadData];
+        }
+        else
+        {
+            NSLog(@"error = %@",error);
+        }
+    }];
+   
     return movieList;
     
 }
